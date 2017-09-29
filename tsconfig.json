@@ -12,7 +12,10 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "watch": true,
-    "stripInternal": true
+    "stripInternal": true,
+    "typeRoots": [
+      "./src/typings"
+    ]
   },
   "include": [
     "src/**/*"

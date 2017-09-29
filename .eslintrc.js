@@ -11,7 +11,8 @@ module.exports = {
   extends: 'standard',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
+    'typescript',
   ],
   // add your custom rules here
   'rules': {
@@ -31,6 +32,7 @@ module.exports = {
       "error",
       "never"
     ],
+    // "typescript/rule-name": "error",
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
 }
