@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="footer">
-            <p>登录即代表阅读并同意<span class="clause">服务条款</span></p>
+            <p>登录即代表阅读并同意<router-link to="/" class="clause">服务条款</router-link></p>
         </div>
     </div>
 </template>
