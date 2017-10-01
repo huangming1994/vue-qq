@@ -6,14 +6,6 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-function greeter (person: Array<number>) {
-  return 'Hello, ' + person
-}
-
-const user = [0, 1, 2]
-
-greeter(user)
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

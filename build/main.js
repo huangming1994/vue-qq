@@ -4,11 +4,6 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 Vue.config.productionTip = false;
-function greeter(person) {
-    return 'Hello, ' + person;
-}
-var user = [0, 1, 2];
-greeter(user);
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
