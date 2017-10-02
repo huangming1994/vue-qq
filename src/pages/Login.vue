@@ -5,9 +5,9 @@
             <span>QQ</span>
         </div>
         <div class="form">
-            <input type="text" name="account" placeholder="QQ号/手机号/邮箱">
+            <input type="text" name="account" placeholder="QQ号/手机号/邮箱" v-model="account">
             <br>
-            <input type="password" name="password" placeholder="密码">
+            <input type="password" name="password" placeholder="密码" v-model="password">
             <br>
             <button type="button">登录</button>
             <div class="operate_btn">
@@ -27,7 +27,8 @@
     name: 'login',
     data () {
       return {
-        message: 'login'
+        account: this.$store.state.account,
+        password: this.$store.state.password
       }
     }
   })
