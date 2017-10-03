@@ -9,10 +9,10 @@
             <br>
             <input type="password" name="password" placeholder="密码" v-model="password">
             <br>
-            <button type="button">登录</button>
+            <button type="button" @click="login">登录</button>
             <div class="operate_btn">
-                <router-link to="/" class="forget_pwd">忘记密码？</router-link>
-                <router-link to="/" class="regist">新用户注册</router-link>
+                <router-link to="/forget_pwd" class="forget_pwd">忘记密码？</router-link>
+                <router-link to="/regist" class="regist" @click="regist">新用户注册</router-link>
             </div>
         </div>
         <div class="footer">
@@ -23,12 +23,31 @@
 
 <script>
   import Vue from 'vue'
+  import { Message } from 'element-ui'
+  import { login, regist } from '../api'
+
   export default Vue.extend({
     name: 'login',
     data () {
       return {
         account: '',
         password: ''
+      }
+    },
+    methods: {
+      login () {
+        if (!this.account) {
+          Message({ message: '请输入账号。' })
+          return
+        }
+        if (!this.password) {
+          Message({ message: '请输入密码。' })
+          return
+        }
+        login(this.account, this.password)
+      },
+      regist () {
+        regist(this.account, this.password)
       }
     }
   })
@@ -99,5 +118,9 @@ input::-webkit-input-placeholder {
 }
 .footer .clause {
     color: rgba(42,167,222, .9);
+}
+.el-message {
+    width: 100%;
+    top: 0;
 }
 </style>
