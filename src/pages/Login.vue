@@ -27,8 +27,8 @@
     name: 'login',
     data () {
       return {
-        account: this.$store.state.account,
-        password: this.$store.state.password
+        account: '',
+        password: ''
       }
     }
   })
