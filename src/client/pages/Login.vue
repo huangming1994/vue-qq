@@ -5,11 +5,11 @@
             <span>QQ</span>
         </div>
         <div class="form">
-            <input type="text" name="account" placeholder="QQ号/手机号/邮箱" v-model="account">
+            <input type="text" name="username" placeholder="QQ号/手机号/邮箱" v-model="username">
             <br>
             <input type="password" name="password" placeholder="密码" v-model="password">
             <br>
-            <button type="button" @click="login">登录</button>
+            <el-button type="primary" @click="login">登录</el-button>
             <div class="operate_btn">
                 <router-link to="/forget_pwd" class="forget_pwd">忘记密码？</router-link>
                 <router-link to="/regist" class="regist" @click="regist">新用户注册</router-link>
@@ -23,20 +23,21 @@
 
 <script>
   import Vue from 'vue'
+  import { mapActions } from 'vuex'
   import { Message } from 'element-ui'
-  import { login, regist } from '../api'
+  import { regist } from '../api'
 
   export default Vue.extend({
     name: 'login',
     data () {
       return {
-        account: '',
+        username: '',
         password: ''
       }
     },
     methods: {
       login () {
-        if (!this.account) {
+        if (!this.username) {
           Message({ message: '请输入账号。' })
           return
         }
@@ -44,11 +45,14 @@
           Message({ message: '请输入密码。' })
           return
         }
-        login(this.account, this.password)
+        this.SET_USER_INFO({ username: this.username, password: this.password })
       },
       regist () {
-        regist(this.account, this.password)
-      }
+        regist(this.username, this.password)
+      },
+      ...mapActions([
+        'SET_USER_INFO'
+      ])
     }
   })
 </script>

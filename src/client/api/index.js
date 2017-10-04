@@ -1,11 +1,11 @@
 import axios from 'axios'
 
-export function login (account, password) {
-  axios.post('/api/login', { account, password })
+export function login (username, password) {
+  return axios.post('/api/login', { username, password })
   .then(res => res.data)
 }
 
-export function regist (account, password) {
-  axios.post('/api/regist', { account, password })
+export function regist (username, password) {
+  return axios.post('/api/regist', { username, password })
   .then(res => res.data)
 }

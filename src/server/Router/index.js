@@ -15,7 +15,7 @@ router.post('/login', function (req, res) {
     if (data) {
       res.json({ status: '1', msg: '登录成功' })
     } else {
-      res.status(500).json({ status: '0', errorMsg: '账号或密码错误！' })
+      res.json({ status: '0', errorMsg: '请输入正确的账号密码！' })
     }
   })
 })
@@ -30,7 +30,7 @@ router.post('/regist', function (req, res) {
   User.findOne({username: postData.username}, function (err, data) {
     if (err) throw err
     if (data) {
-      res.status(500).json({ status: '0', errorMsg: '用户名已被注册' })
+      res.json({ status: '0', errorMsg: '用户名已被注册' })
     } else {
       // 保存到数据库
       User.create(postData, function (err, data) {
