@@ -1,13 +1,18 @@
 <template>
   <div id="app">
+    <loading></loading>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
+  import Loading from '@/components/Loading'
 export default Vue.extend({
-    name: 'app'
+    name: 'app',
+    components: {
+      Loading
+    }
 })
 </script>
 
@@ -51,15 +56,15 @@ html, body {
   width: 100%;
   height: 100%;
 }
-@media screen and (min-width: 769px) {
-  body{
-    box-shadow: 0 0 30px gray;
-    margin:0 auto;
-  }
-  body,#app{
-    width:440px
-  }
-}
+/*@media screen and (min-width: 769px) {*/
+  /*body{*/
+    /*box-shadow: 0 0 30px gray;*/
+    /*margin:0 auto;*/
+  /*}*/
+  /*body,#app{*/
+    /*width:440px*/
+  /*}*/
+/*}*/
 a{
   display: inline-block;
   text-decoration: none;

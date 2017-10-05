@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { login } from '../../api'
+import { request } from '../../api/request'
 
 const state = {
   userInfo: {}
@@ -13,7 +14,7 @@ const mutations = {
 
 const actions = {
   SET_USER_INFO ({ commit }, { username, password }) {
-    login(username, password)
+    request(commit, login(username, password))
     .then(userInfo => commit('SET_USER_INFO', userInfo))
   }
 }
