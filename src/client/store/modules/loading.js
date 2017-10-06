@@ -8,10 +8,10 @@ const getters = {
 }
 
 const mutations = {
-  START_LOADING (state) {
+  START_LOADING(state) {
     Vue.set(state, 'loadingQueue', state.loadingQueue + 1)
   },
-  FINISH_LOADING (state) {
+  FINISH_LOADING(state) {
     Vue.set(state, 'loadingQueue', Math.max(0, state.loadingQueue - 1))
   }
 }

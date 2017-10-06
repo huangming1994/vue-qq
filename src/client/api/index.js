@@ -1,11 +1,11 @@
-import axios from 'axios'
+import { fetchAPI } from './request'
 
-export function login (username, password) {
-  return axios.post('/api/login', { username, password })
-  .then(res => res.data)
+export async function login(username, password) {
+  const result = await fetchAPI('/api/login', { username, password })
+  return result
 }
 
-export function regist (username, password) {
-  return axios.post('/api/regist', { username, password })
-  .then(res => res.data)
+export async function regist(username, password) {
+  const result = await fetchAPI('/api/regist', { username, password })
+  return result
 }

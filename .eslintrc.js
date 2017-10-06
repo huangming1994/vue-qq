@@ -31,6 +31,11 @@ module.exports = {
       "error",
       "never"
     ],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "never"
+    }],
     // "typescript/rule-name": "error",
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

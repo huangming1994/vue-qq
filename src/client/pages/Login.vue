@@ -29,14 +29,14 @@
 
   export default Vue.extend({
     name: 'login',
-    data () {
+    data() {
       return {
         username: '',
         password: ''
       }
     },
     methods: {
-      login () {
+      login() {
         if (!this.username) {
           Message({ message: '请输入账号。' })
           return
@@ -47,8 +47,8 @@
         }
         this.SET_USER_INFO({ username: this.username, password: this.password })
       },
-      regist () {
-        regist(this.username, this.password)
+      regist: async function() {
+        await regist(this.username, this.password)
       },
       ...mapActions([
         'SET_USER_INFO'
