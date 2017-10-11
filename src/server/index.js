@@ -12,7 +12,7 @@ mongoose.connection.on('error', () => console.log('MongoDB Connection Error'))
 const app = express()
 app.use(bodyParser.json())
 
-app.use(bodyParser.urlencoded({ extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/api', apiRouter)
 module.exports = app

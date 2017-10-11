@@ -24,13 +24,13 @@
   import Vue from 'vue'
 export default Vue.extend({
     name: 'hello',
-    data () {
+    data() {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
     },
     methods: {
-      push () {
+      push() {
         this.$router.push('/login')
       }
     }
