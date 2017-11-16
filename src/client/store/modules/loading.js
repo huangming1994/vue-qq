@@ -1,6 +1,6 @@
 import Vue from 'vue'
 const state = {
-  loadingQueue: 0,
+  loadingQueue: 0
 }
 
 const getters = {
