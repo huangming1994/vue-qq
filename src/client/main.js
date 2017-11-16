@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.use(ElementUI)
 /* eslint-disable no-new */
 new Vue({
