@@ -62,7 +62,7 @@
   height: 100%;
   padding: 0 8%;
   position: relative;
-  background: url('../images/qq_login-bg.jpeg') no-repeat;
+  background: url('../assets/qq_login-bg.jpeg') no-repeat;
   background-size: cover;
   overflow: hidden;  /* 创建BFC解决Margin Collapse */
 }
